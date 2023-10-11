@@ -35,17 +35,17 @@ const makeAddSurvey = (): AddSurvey => {
 interface SutTypes {
   sut: AddSurveyController
   validationStub: Validation
-  AddSurveyStub: AddSurvey
+  addSurveyStub: AddSurvey
 }
 
 const makeSut = (): SutTypes => {
   const validationStub = makeValidation()
-  const AddSurveyStub = makeAddSurvey()
-  const sut = new AddSurveyController(validationStub, AddSurveyStub)
+  const addSurveyStub = makeAddSurvey()
+  const sut = new AddSurveyController(validationStub, addSurveyStub)
   return {
     sut,
     validationStub,
-    AddSurveyStub
+    addSurveyStub
   }
 }
 
@@ -74,16 +74,16 @@ describe('AddSurvey Controller', () => {
   })
 
   test('Should call AddSurvey with correct values', async () => {
-    const { sut, AddSurveyStub } = makeSut()
-    const addSpy = jest.spyOn(AddSurveyStub, 'add')
+    const { sut, addSurveyStub } = makeSut()
+    const addSpy = jest.spyOn(addSurveyStub, 'add')
     const httpRequest = makeFakeRequest()
     await sut.handle(httpRequest)
     expect(addSpy).toHaveBeenCalledWith(httpRequest.body)
   })
 
   test('Should return 500 if AddSurvey throws', async () => {
-    const { sut, AddSurveyStub } = makeSut()
-    jest.spyOn(AddSurveyStub, 'add').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
+    const { sut, addSurveyStub } = makeSut()
+    jest.spyOn(addSurveyStub, 'add').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
     const httpResponse = await sut.handle(makeFakeRequest())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
