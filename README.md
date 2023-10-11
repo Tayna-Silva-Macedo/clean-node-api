@@ -1,3 +1,6 @@
+[![Build Status](https://app.travis-ci.com/Tayna-Silva-Macedo/clean-node-api.svg?branch=main)](https://app.travis-ci.com/Tayna-Silva-Macedo/clean-node-api)
+[![Coverage Status](https://coveralls.io/repos/github/Tayna-Silva-Macedo/clean-node-api/badge.svg)](https://coveralls.io/github/Tayna-Silva-Macedo/clean-node-api)
+
 # **Clean Node API**
 
 > ## APIs construídas no treinamento
