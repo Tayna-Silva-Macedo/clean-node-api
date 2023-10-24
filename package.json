@@ -1,8 +1,11 @@
 {
   "name": "clean-node-api",
   "version": "3.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "NodeJs Rest API and GraphQL using TDD, Clean Architecture, Typescript and Design Patterns",
+  "author": "Tayná Silva Macêdo",
+  "license": "ISC",
+  "repository": "github:Tayna-Silva-Macedo/clean-node-api",
+  "homepage": "https://github.com/Tayna-Silva-Macedo",
   "scripts": {
     "start": "node dist/main/server.js",
     "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
@@ -20,9 +23,6 @@
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
     "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.0.3",
     "@types/bcrypt": "^5.0.0",
